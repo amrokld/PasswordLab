@@ -103,7 +103,43 @@ def login(data: LoginRequest):
         "message": "NUH UH, wrong username or password, mate!"
     }
 
-    
+# ------------ CHANGE USERNAME -------------
+
+class ChangeUsernameRequest(BaseModel):
+    current_username: str
+    new_username: str
+
+@app.post("/change-username")
+def change_username(data: ChangeUsernameRequest):
+    users = load_users()
+
+    # Check that the current account exists
+    if data.current_username not in users:
+        return {
+            "success": False,
+            "message": "Hm, I cant find your username in the database!"
+        } 
+
+    # Check that the new username is not already taken
+    if data.new_username in users:
+        return {
+            "success": False,
+            "message": "Sorry. but this username already taken, Choose another!"
+        }
+
+    # Move the existing user data to the new username
+    users[data.new_username] = users[data.current_username]
+
+    # Remove the old username
+    del users[data.current_username]
+
+    save_users(users)
+
+    return {
+        "sccess": True,
+        "message": "Old one got vanished and the new one has registered successfully!"
+    }
+
  
 # ------------ HOME -----------------
 @app.get("/")

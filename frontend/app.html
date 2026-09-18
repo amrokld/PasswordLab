@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Security Lab</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-logo">P</div>
+
+                <div>
+                    <h1>Password Lab</h1>
+                    <span>Security Project</span>
+                </div>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="app.html" class="nav-item active">
+                    <span>Home</span>
+                </a>
+
+                <a href="account.html" class="nav-item" id="accountNav">
+                    <span>Account</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button id="logoutButton" class="logout-button">
+                    Log out
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <h2 id="welcomeMessage">Welcome back.</h2>
+                </div>
+
+
+                <button id="accountButton" class="account-button">
+
+                    <span id="accountInitial" class="account-initial">
+                        ?
+                    </span>
+
+                    <span id="accountUsername">
+                        Account
+                    </span>
+
+                </button>
+
+            </header>
+
+
+            <section class="dashboard">
+
+                <!-- Empty state -->
+
+                <div class="empty-state">
+
+                    <h2>It's empty here.</h2>
+
+                    <p>
+                        We haven't built anything here yet.
+                        Give us a minute. We're working on it.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     PROJECT INFORMATION
+                ========================== -->
+
+                <div class="about-card">
+
+                    <div class="about-header">
+
+                        <div>
+                            <span class="section-label">
+                                PROJECT
+                            </span>
+
+                            <h2>Password Security Lab</h2>
+                        </div>
+
+                    </div>
+
+
+                    <p class="about-description">
+                        An educational authentication system built to
+                        understand password hashing, salts, authentication,
+                        and basic web security concepts.
+                    </p>
+
+
+                    <div class="about-details">
+
+                        <div class="about-detail">
+
+                            <span>Backend</span>
+
+                            <strong>FastAPI</strong>
+
+                        </div>
+
+
+                        <div class="about-detail">
+
+                            <span>Authentication</span>
+
+                            <strong>Password Hashing</strong>
+
+                        </div>
+
+
+                        <div class="about-detail">
+
+                            <span>Storage</span>
+
+                            <strong>Local JSON</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         ACCOUNT MENU
+    ========================== -->
+
+    <div id="accountMenu" class="account-menu hidden">
+
+        <div class="account-menu-header">
+
+            <span id="menuInitial" class="account-initial">
+                ?
+            </span>
+
+            <div>
+                <strong id="menuUsername">
+                    Account
+                </strong>
+
+                <span>
+                    Signed in
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="account-menu-divider"></div>
+
+
+        <button id="menuAccountButton" class="account-menu-item">
+            Account settings
+        </button>
+
+
+        <button id="menuLogoutButton" class="account-menu-item danger">
+            Log out
+        </button>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

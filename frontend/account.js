@@ -130,9 +130,60 @@ logoutButton.addEventListener("click", () => {
 // TEMPORARY SAVE BUTTONS
 // =========================
 
-document.getElementById("saveUsernameButton").addEventListener("click", () => {
-    usernameMessage.textContent =
-        "Username changes will be connected to the backend next.";
+document.getElementById("saveUsernameButton").addEventListener("click", async () => {
+    const newUsername = document.getElementById("newUsername").value.trim();
+
+    if (!newUsername) {
+        usernameMessage.textContent = "Please enter a new username.";
+        return;
+    }
+
+    if (newUsername === currentUser) {
+        usernameMessage.textContent = "Thats already your username, idiot!";
+        return;
+    }
+
+    const button = document.getElementById("saveUsernameButton");
+
+    button.disabled = true;
+    button.textContent = "Saving...";
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/change-username", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                current_username: currentUser,
+                new_username: newUsername
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // Update the logged-in username
+            sessionStorage.setItem("currentUser", newUsername);
+
+            currentUsername.textContent = newUsername;
+
+            closeModal(usernameModal);
+
+            // Reload so every part of the account page uses the new username
+            window.location.reload();
+        } else {
+            usernameMessage.textContent = result.message;
+        }
+
+    } catch (error) {
+        console.error(error);
+        usernameMessage.textContent =
+            "UH, the Server is down at this moment!";
+    }
+
+    button.disabled = false;
+    button.textContent = "Save Changes";
 });
 
 document.getElementById("savePasswordButton").addEventListener("click", () => {
