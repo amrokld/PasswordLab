@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Lab — Account</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">P</div>
+
+                <div>
+                    <strong>Password Lab</strong>
+                    <span>Security playground</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="app.html" class="nav-item">
+                    <span>⌂</span>
+                    Home
+                </a>
+
+                <a href="account.html" class="nav-item active">
+                    <span>○</span>
+                    Account
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button id="logoutButton" class="logout-button">
+                    Log Out
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="app-main">
+
+            <header class="app-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        Account
+                    </p>
+
+                    <h1>
+                        Account settings
+                    </h1>
+
+                </div>
+
+            </header>
+
+
+            <!-- PROFILE -->
+
+            <section class="settings-section">
+
+                <div class="settings-heading">
+
+                    <h2>
+                        Profile
+                    </h2>
+
+                    <p>
+                        Manage your account information.
+                    </p>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <span class="setting-label">
+                            Username
+                        </span>
+
+                        <strong id="currentUsername">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="changeUsernameButton"
+                        class="secondary-button"
+                    >
+                        Change Username
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECURITY -->
+
+            <section class="settings-section">
+
+                <div class="settings-heading">
+
+                    <h2>
+                        Security
+                    </h2>
+
+                    <p>
+                        Manage your authentication credentials.
+                    </p>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <span class="setting-label">
+                            Password
+                        </span>
+
+                        <strong>
+                            ••••••••••••••
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="changePasswordButton"
+                        class="secondary-button"
+                    >
+                        Change Password
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACCOUNT STATUS -->
+
+            <section class="settings-section">
+
+                <div class="settings-heading">
+
+                    <h2>
+                        Account information
+                    </h2>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Account status
+                    </span>
+
+                    <span class="status-active">
+                        ● Active
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Authentication
+                    </span>
+
+                    <span>
+                        Password based
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Storage
+                    </span>
+
+                    <span>
+                        Local database
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- CHANGE USERNAME MODAL -->
+
+    <div
+        id="usernameModal"
+        class="modal-overlay hidden"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        Profile
+                    </p>
+
+                    <h2>
+                        Change username
+                    </h2>
+
+                </div>
+
+                <button
+                    id="closeUsernameModal"
+                    class="modal-close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="newUsername">
+                    New username
+                </label>
+
+                <input
+                    id="newUsername"
+                    type="text"
+                    placeholder="Enter your new username"
+                >
+
+            </div>
+
+
+            <p
+                id="usernameMessage"
+                class="message"
+            ></p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    id="cancelUsernameButton"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    id="saveUsernameButton"
+                    class="primary-button modal-primary"
+                >
+                    Change Username
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHANGE PASSWORD MODAL -->
+
+    <div
+        id="passwordModal"
+        class="modal-overlay hidden"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        Security
+                    </p>
+
+                    <h2>
+                        Change password
+                    </h2>
+
+                </div>
+
+                <button
+                    id="closePasswordModal"
+                    class="modal-close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="currentPassword">
+                    Current password
+                </label>
+
+                <input
+                    id="currentPassword"
+                    type="password"
+                    placeholder="Enter your current password"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="newPassword">
+                    New password
+                </label>
+
+                <input
+                    id="newPassword"
+                    type="password"
+                    placeholder="Create your new password"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm new password
+                </label>
+
+                <input
+                    id="confirmPassword"
+                    type="password"
+                    placeholder="Enter your new password again"
+                >
+
+            </div>
+
+
+            <p
+                id="passwordMessage"
+                class="message"
+            ></p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    id="cancelPasswordButton"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    id="savePasswordButton"
+                    class="primary-button modal-primary"
+                >
+                    Change Password
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="account.js"></script>
+
+</body>
+
+</html>

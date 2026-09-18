@@ -1,0 +1,34 @@
+{
+    "amro": {
+        "salt": "458bb0c3de5e5b9c2a8a54680aaa4fab",
+        "hash": "b3ca607813bf257974b035984e05589e3d3c1e94244b649cfb532971a6e8dd90"
+    },
+    "user1": {
+        "salt": "abf1687a09765216c73f7dedbeecdb32",
+        "hash": "a379bb93cc4a608442d1e7eff97fdc417acb924c296b8637271f16d386159c66"
+    },
+    "user2": {
+        "salt": "e4fc022d2fe2876a6163edf6f558e0c4",
+        "hash": "072951ba6e3335b0c4e605601d37810241cc743372a0cac03da031fcf5cdd5e4"
+    },
+    "user3": {
+        "salt": "f983ed50f0ec70c4fc1c56b891c97561",
+        "hash": "6aa218d34a937c577660dc369f7bd842420a184dd7b25b4625f1aedebedf78c5"
+    },
+    "webuser": {
+        "salt": "3b4d994fd38deb2b0effefc53dc8ba6c",
+        "hash": "d82bd371891ef4837ac52ed1d6d312c46bd8d7dc61e4ee3f085ee674d57334f2"
+    },
+    "browseruser": {
+        "salt": "d1fb5469b3184c4460531d42b8b32b13",
+        "hash": "7920701f07c7588e83d5b183bbae1e79830d1c30c603c1d5275dbccd9fdf9751"
+    },
+    "khaled": {
+        "salt": "352be9f6d87856f3cb65d78808105a97",
+        "hash": "b9b2fb46ec19fed1ba819b084d38c2deb34dbbba5a57a7c575b0eb0122ae8fc0"
+    },
+    "tester1": {
+        "salt": "8370ee6de19a203c98fd86c65259d1aa",
+        "hash": "345d7dbf4f55f5b3d88b8045770c5f661b3da2f8deef20bf2b18aca3b77227c0"
+    }
+}

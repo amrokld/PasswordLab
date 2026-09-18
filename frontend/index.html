@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Security Lab</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <!-- BRAND -->
+        <div class="brand">
+            <div class="brand-icon">P</div>
+
+            <div>
+                <h1>Password Lab</h1>
+                <p>Authentication playground</p>
+            </div>
+        </div>
+
+
+        <!-- AUTH CARD -->
+        <section class="auth-card">
+
+            <!-- LOGIN -->
+            <div id="loginView">
+
+                <div class="auth-header">
+                    <h2>Welcome back</h2>
+                    <p>Sign in to continue.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+
+                    <input
+                        id="loginUsername"
+                        type="text"
+                        placeholder="Username here!"
+                        autocomplete="username"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            id="loginPassword"
+                            type="password"
+                            placeholder="Password goes here!"
+                            autocomplete="current-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="loginPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <button id="loginButton" class="primary-button">
+                    Sign In
+                </button>
+
+
+                <p id="loginMessage" class="message"></p>
+
+
+                <div class="switch-auth">
+                    <span>Don't have an account?</span>
+
+                    <button id="showRegisterButton" class="text-button">
+                        Create one
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- REGISTER -->
+            <div id="registerView" class="hidden">
+
+                <div class="auth-header">
+                    <h2>Create account</h2>
+                    <p>Make yourself at home.</p>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="registerUsername">Username</label>
+
+                    <input
+                        id="registerUsername"
+                        type="text"
+                        placeholder="Username goes here!"
+                        autocomplete="username"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            id="registerPassword"
+                            type="password"
+                            placeholder="Password here!"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="registerPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- PASSWORD STRENGTH -->
+                <div class="strength-section">
+
+                    <div class="strength-header">
+                        <span>Password strength</span>
+                        <span id="strengthText">Enter a password</span>
+                    </div>
+
+                    <div class="strength-bar">
+                        <div id="strengthFill"></div>
+                    </div>
+
+                </div>
+
+
+                <button id="registerButton" class="primary-button">
+                    Create Account
+                </button>
+
+
+                <p id="registerMessage" class="message"></p>
+
+
+                <div class="switch-auth">
+                    <span>Already have an account?</span>
+
+                    <button id="showLoginButton" class="text-button">
+                        Sign in
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <span>Password Security Lab</span>
+            <span>Local educational project</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
